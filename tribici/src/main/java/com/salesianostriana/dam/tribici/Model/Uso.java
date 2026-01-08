@@ -3,7 +3,7 @@ package com.salesianostriana.dam.tribici.Model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
@@ -24,13 +24,13 @@ public class Uso {
     private LocalDate fechaFin;
     private double coste;
 
-    @OneToMany (mappedBy = "usos")
+    @ManyToOne
     private Estacion estacion;
 
-    @OneToMany (mappedBy = "usos")
+    @ManyToOne
     private Bicicleta bicicleta;
 
-    @OneToMany (mappedBy = "usos")
+    @ManyToOne
     private Usuario usuario;
 
 

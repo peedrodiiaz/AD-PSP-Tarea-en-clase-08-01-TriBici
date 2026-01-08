@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-TriBiciApplication<tribici>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.salesianostriana.dam.tribici.TriBiciApplication",
+            "projectName": "tribici",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

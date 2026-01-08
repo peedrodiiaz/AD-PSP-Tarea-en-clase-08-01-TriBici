@@ -24,8 +24,7 @@ public class Usuario {
     private int pin;
     private double saldo;
 
-    @ManyToOne
-    @JoinColumn (name = "uso_id")
+    @OneToMany(mappedBy = "usuario")
     private List<Uso>usos= new ArrayList<Uso>();
 
 

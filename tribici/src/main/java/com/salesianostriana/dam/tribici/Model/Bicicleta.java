@@ -26,7 +26,8 @@ public class Bicicleta {
     @JoinColumn(name = "estacion_id")
     private Estacion estacion;
 
-    @OneToMany (mappedBy = "estacion")
+    @OneToMany (mappedBy = "bicicleta")
+    @Builder.Default
     private List<Uso>usos= new ArrayList<Uso>();
 
 

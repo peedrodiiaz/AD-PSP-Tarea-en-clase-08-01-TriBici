@@ -23,11 +23,10 @@ public class Estacion {
     private String coordenadas;
     private int capacidad;
 
-    @ManyToOne
-    @JoinColumn(name = "bicicleta_id")
+    @OneToMany(mappedBy = "estacion")
     private List<Bicicleta> bicicletas = new ArrayList<Bicicleta>();
-    @ManyToOne
-    @JoinColumn(name = "uso_id")
+    
+    @OneToMany(mappedBy = "estacion")
     private List <Uso> usos= new ArrayList<Uso>();
 
 
