@@ -24,10 +24,9 @@ public class Estacion {
     private int capacidad;
 
     @OneToMany(mappedBy = "estacion")
+    @Builder.Default
     private List<Bicicleta> bicicletas = new ArrayList<Bicicleta>();
-    
-    @OneToMany(mappedBy = "estacion")
-    private List <Uso> usos= new ArrayList<Uso>();
+
 
 
 
@@ -46,4 +45,22 @@ public class Estacion {
     public final int hashCode() {
         return this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass().hashCode() : getClass().hashCode();
     }
+
+
+
+
+    // Metodos de utilidad
+    public void addBicicleta (  Bicicleta bicicleta){
+        bicicletas.add(bicicleta);
+        bicicleta.setEstacion(this);
+    }
+
+    public void deleteBicicleta (Bicicleta bicicleta){
+        bicicletas.remove(bicicleta);
+        bicicleta.setEstacion(null);
+    }
+
+
+
+
 }

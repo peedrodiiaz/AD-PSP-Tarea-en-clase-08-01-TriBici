@@ -23,7 +23,7 @@ public class Bicicleta {
     private  EstadoBicicleta estado;
 
     @ManyToOne
-    @JoinColumn(name = "estacion_id")
+    @JoinColumn(name = "estacion_id", foreignKey = @ForeignKey(name="fk_bicicleta_estacion"))
     private Estacion estacion;
 
     @OneToMany (mappedBy = "bicicleta")
@@ -46,4 +46,8 @@ public class Bicicleta {
     public final int hashCode() {
         return this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass().hashCode() : getClass().hashCode();
     }
+
+
+
+
 }

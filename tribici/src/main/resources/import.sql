@@ -1,0 +1,14 @@
+INSERT INTO estacion (id, numero, nombre, coordenadas, capacidad) VALUES (1, 101, 'Estación Centro', '37.3886,-5.9823', 20);
+INSERT INTO estacion (id, numero, nombre, coordenadas, capacidad) VALUES (2, 102, 'Estación Norte', '37.4012,-5.9756', 15);
+INSERT INTO estacion (id, numero, nombre, coordenadas, capacidad) VALUES (3, 103, 'Estación Sur', '37.3745,-5.9889', 25);
+INSERT INTO bicicleta (id, marca, modelo, estado, estacion_id) VALUES (1, 'Orbea', 'Avant H30', 0, 1);
+INSERT INTO bicicleta (id, marca, modelo, estado, estacion_id) VALUES (2, 'BH', 'Atom City', 0, 1);
+INSERT INTO bicicleta (id, marca, modelo, estado, estacion_id) VALUES (3, 'Giant', 'Escape 3', 0, 2);
+INSERT INTO bicicleta (id, marca, modelo, estado, estacion_id) VALUES (4, 'Specialized', 'Sirrus X', 2, 2);
+INSERT INTO bicicleta (id, marca, modelo, estado, estacion_id) VALUES (5, 'Trek', 'FX 2', 0, 3);
+INSERT INTO usuario (id, nombre, num_tarjeta, pin, saldo) VALUES (1, 'Juan Pérez', 12345678, 1234, 50.0);
+INSERT INTO usuario (id, nombre, num_tarjeta, pin, saldo) VALUES (2, 'María García', 87654321, 4321, 75.5);
+INSERT INTO usuario (id, nombre, num_tarjeta, pin, saldo) VALUES (3, 'Carlos López', 11223344, 5678, 30.0);
+INSERT INTO uso (id, fecha_inicio, fecha_fin, coste, inicio_id, fin_id, bicicleta_id, usuario_id, estacion_id) VALUES (1, '2024-01-15', '2024-01-15', 2.5, 1, 2, 1, 1, 1);
+INSERT INTO uso (id, fecha_inicio, fecha_fin, coste, inicio_id, fin_id, bicicleta_id, usuario_id, estacion_id) VALUES (2, '2024-01-16', '2024-01-16', 3.0, 2, 3, 3, 2, 2);
+INSERT INTO uso (id, fecha_inicio, fecha_fin, coste, inicio_id, fin_id, bicicleta_id, usuario_id, estacion_id) VALUES (3, '2024-01-17', '2024-01-17', 1.5, 1, 3, 2, 3, 1);

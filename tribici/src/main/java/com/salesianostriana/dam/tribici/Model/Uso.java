@@ -3,6 +3,7 @@ package com.salesianostriana.dam.tribici.Model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
@@ -25,13 +26,24 @@ public class Uso {
     private double coste;
 
     @ManyToOne
-    private Estacion estacion;
+    @JoinColumn (name = "inicio_id")
+    private Estacion inicio;
 
     @ManyToOne
+    @JoinColumn (name = "fin_id")
+    private Estacion fin;
+
+    @ManyToOne
+    @JoinColumn (name = "bicicleta_id")
     private Bicicleta bicicleta;
 
     @ManyToOne
+    @JoinColumn (name = "usuario_id")
     private Usuario usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "estacion_id")
+    private Estacion estacion;
 
 
     @Override

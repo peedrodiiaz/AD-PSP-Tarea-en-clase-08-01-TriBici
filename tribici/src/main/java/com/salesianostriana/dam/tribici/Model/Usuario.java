@@ -25,6 +25,7 @@ public class Usuario {
     private double saldo;
 
     @OneToMany(mappedBy = "usuario")
+    @Builder.Default
     private List<Uso>usos= new ArrayList<Uso>();
 
 
