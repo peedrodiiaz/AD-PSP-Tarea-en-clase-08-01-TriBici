@@ -5,16 +5,12 @@ import com.salesianostriana.dam.tribici.Repository.BicicletaRepository;
 import com.salesianostriana.dam.tribici.Repository.EstacionRepository;
 import com.salesianostriana.dam.tribici.Repository.UsoRepository;
 import com.salesianostriana.dam.tribici.Repository.UsuarioRepository;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.apache.coyote.BadRequestException;
-import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Objects;
 
 @Service
