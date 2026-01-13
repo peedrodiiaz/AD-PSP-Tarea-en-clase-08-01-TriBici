@@ -46,6 +46,11 @@ public class Bicicleta {
     public final int hashCode() {
         return this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass().hashCode() : getClass().hashCode();
     }
+    public void eliminarEstacion() {
+        if (estacion != null) {
+            estacion.removeBicicleta(this);
+        }
+    }
 
 
 

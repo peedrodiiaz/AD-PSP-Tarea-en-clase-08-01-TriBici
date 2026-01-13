@@ -14,8 +14,15 @@ public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
 
-    public Optional<Usuario> autenticacion (String numTarjeta, String pin){
-        return usuarioRepository.findByNumTarjetaAndPin(numTarjeta,pin);
+
+    public Optional<Usuario> autenticacion(String numTarjeta, String pin) {
+        return usuarioRepository.findByNumTarjetaAndPin(numTarjeta, pin);
     }
+
+    public void actualizarSaldo(Usuario usuario, double cantidadDecrementar) {
+        usuario.setSaldo(usuario.getSaldo() - cantidadDecrementar);
+        usuarioRepository.save(usuario);
+    }
+
 
 }

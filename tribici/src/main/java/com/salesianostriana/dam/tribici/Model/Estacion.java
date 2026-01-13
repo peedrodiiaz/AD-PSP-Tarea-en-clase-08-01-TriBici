@@ -23,7 +23,7 @@ public class Estacion {
     private String coordenadas;
     private int capacidad;
 
-    @OneToMany(mappedBy = "estacion")
+    @OneToMany(mappedBy = "estacion", fetch = FetchType.LAZY)
     @Builder.Default
     private List<Bicicleta> bicicletas = new ArrayList<Bicicleta>();
 
@@ -47,19 +47,15 @@ public class Estacion {
     }
 
 
-
-
-    // Metodos de utilidad
-    public void addBicicleta (  Bicicleta bicicleta){
+    public void addBicicleta(Bicicleta bicicleta) {
         bicicletas.add(bicicleta);
         bicicleta.setEstacion(this);
     }
 
-    public void deleteBicicleta (Bicicleta bicicleta){
+    public void removeBicicleta(Bicicleta bicicleta) {
         bicicletas.remove(bicicleta);
         bicicleta.setEstacion(null);
     }
-
 
 
 

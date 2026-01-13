@@ -74,4 +74,16 @@ public class BicicletaService {
 
 
 
+    public Bicicleta update(Bicicleta bicicleta) {
+        return bicicletaRepository.findById(bicicleta.getId())
+                .map(b -> {
+                    b.setEstado(bicicleta.getEstado());
+                    b.setEstacion(bicicleta.getEstacion());
+                    b.setModelo(bicicleta.getModelo());
+                    b.setMarca(bicicleta.getMarca());
+                    return bicicletaRepository.save(b);
+                })
+                .orElseThrow(() -> new EntityNotFoundException("Bicicleta no encontrada"));
+    }
+
 }
